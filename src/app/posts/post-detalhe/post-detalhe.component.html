@@ -1,0 +1,55 @@
+<p>post-detalhe works!</p>
+
+<div class="container-fluid">
+  <!-- Timelime example  -->
+  <div class="row">
+    <div class="col-md-12">
+      <!-- The time line -->
+      <div class="timeline">
+        <!-- timeline time label -->
+        <div class="time-label">
+          <span class="bg-red">10 Feb. 2014</span>
+        </div>
+        <!-- /.timeline-label -->
+        <!-- timeline item -->
+        <div>
+          <i class="fas fa-envelope bg-blue"></i>
+          <div class="timeline-item">
+            <span class="time"><i class="fas fa-clock"></i> 12:05</span>
+            <h3 class="timeline-header">{{ post?.title }}</h3>
+
+            <div class="timeline-body">
+              {{ post?.body }}
+            </div>
+            <div class="timeline-footer">
+              <a class="btn btn-primary btn-sm" routerLink="/posts">Back To List</a>
+            </div>
+          </div>
+        </div>
+        <!-- END timeline item -->
+
+        <!-- timeline item -->
+        <div class="" *ngFor="let comment of comments; index as i;">
+          <i class="fas fa-comments bg-yellow"></i>
+          <div class="timeline-item">
+            <span class="time"><i class="fas fa-clock"></i> 27 mins ago</span>
+            <h3 class="timeline-header"><a href="#">{{ comment.name }}</a> commented on your post</h3>
+            <div class="timeline-body">
+              {{ comment.body }}
+            </div>
+            <div class="timeline-body">
+              {{ comment.email }}
+            </div>
+          </div>
+        </div>
+        <!-- END timeline item -->
+
+        <div>
+          <i class="fas fa-clock bg-gray"></i>
+        </div>
+      </div>
+    </div>
+    <!-- /.col -->
+  </div>
+</div>
+<!-- /.timeline -->

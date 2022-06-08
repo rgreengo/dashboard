@@ -1,0 +1,39 @@
+<!-- <div class="progress shadow-sm" *ngIf="MY_PREC < 100">
+  <div name="progressBar" title="progress bar" class="progress-bar shadow-sm" [style.width.%]="MY_PREC" role="progressbar"
+    [attr.aria-valuenow]="MY_PREC" aria-valuemin="0" aria-valuemax="100"></div>
+</div> -->
+<div class="container-fluid">
+  <!-- Timelime example  -->
+  <div class="row" *ngFor="let item of posts; index as i;">
+    <div class="col-md-12">
+      <!-- The time line -->
+      <div class="timeline">
+        <!-- timeline time label -->
+        <div class="time-label">
+          <span class="bg-red">10 Feb. 2014</span>
+        </div>
+        <!-- /.timeline-label -->
+        <!-- timeline item -->
+        <div>
+          <i class="fas fa-envelope bg-blue"></i>
+          <div class="timeline-item">
+            <span class="time"><i class="fas fa-clock"></i> 12:05</span>
+            <h3 class="timeline-header" routerLink="/post-detalhe/{{ item.id }}">{{ item.title }}</h3>
+            <div class="timeline-body">
+              {{ item.body }}
+            </div>
+            <div class="timeline-footer">
+              <a class="btn btn-primary btn-sm" routerLink="/post-detalhe/{{ item.id }}">Read more</a>
+            </div>
+          </div>
+        </div>
+        <!-- END timeline item -->
+        <div>
+          <i class="fas fa-clock bg-gray"></i>
+        </div>
+      </div>
+    </div>
+    <!-- /.col -->
+  </div>
+</div>
+<!-- /.timeline -->

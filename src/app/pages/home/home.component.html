@@ -1,0 +1,41 @@
+<div class="progress shadow-sm" *ngIf="MY_PREC < 100">
+  <div name="progressBar" title="progress bar" class="progress-bar shadow-sm" [style.width.%]="MY_PREC"
+    role="progressbar" [attr.aria-valuenow]="MY_PREC" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+<!-- <div class="btn-group">
+  <a class="btn btn-app" href="#" [routerLink]="['/filtros']"><i class="fa-solid fa-arrow-down-wide-short"></i>Filtros</a>
+  <a class="btn btn-app" href="#" [routerLink]="['/filtros']"><fa-icon [icon]="faCoffee"></fa-icon>Filtros</a>
+
+</div> -->
+<div *ngIf="MY_PREC >= 100">
+  <div class="shadow-lg p-3 mb-5 bg-white rounded">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+    vitae
+    leo malesuada purus eleifend imperdiet.</div>
+  <br />
+  <p class="shadow-lg p-3 mb-5 bg-white rounded">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae
+    leo malesuada purus eleifend imperdiet.
+    Nullam
+    blandit vestibulum convallis. Integer ac varius quam. Cras consequat, nisi eu euismod sollicitudin, justo nulla
+    tincidunt eros, non suscipit est urna sed eros. Morbi consequat sem at tellus sollicitudin, non fermentum augue
+    dapibus. Nullam lacinia nisi leo, nec consectetur mi faucibus placerat. Praesent mattis nibh augue, ac imperdiet
+    tortor pharetra vitae. Nunc congue velit elit, eget consectetur augue consectetur ac. Fusce sit amet ullamcorper
+    odio.
+  </p>
+  <p class="shadow-lg p-3 mb-5 bg-white rounded">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae
+    leo malesuada purus eleifend imperdiet.
+    Nullam
+    blandit vestibulum convallis. Integer ac varius quam. Cras consequat, nisi eu euismod sollicitudin, justo nulla
+    tincidunt eros, non suscipit est urna sed eros. Morbi consequat sem at tellus sollicitudin, non fermentum augue
+    dapibus. Nullam lacinia nisi leo, nec consectetur mi faucibus placerat. Praesent mattis nibh augue, ac imperdiet
+    tortor pharetra vitae. Nunc congue velit elit, eget consectetur augue consectetur ac. Fusce sit amet ullamcorper
+    odio.
+  </p>
+  <p class="shadow-lg p-3 mb-5 bg-white rounded">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Quisque vitae leo malesuada purus eleifend imperdiet. Nullam blandit vestibulum convallis. Integer ac varius quam.
+    Cras consequat, nisi eu euismod sollicitudin, justo nulla tincidunt eros, non suscipit est urna sed eros. Morbi
+    consequat sem at tellus sollicitudin, non fermentum augue dapibus. Nullam lacinia nisi leo, nec consectetur mi
+    faucibus placerat. Praesent mattis nibh augue, ac imperdiet tortor pharetra vitae. Nunc congue velit elit, eget
+    consectetur augue consectetur ac. Fusce sit amet ullamcorper odio.</p>
+</div>
+

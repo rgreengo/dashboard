@@ -1,0 +1,34 @@
+<p>filtro-com-pipe works!</p>
+<!-- Search box -->
+<input type="text" [(ngModel)]="searchText" placeholder="Search Curso" />
+
+<ul>
+  <li *ngFor="let curso of obterCursos()" class="active">
+    <a href="#" [routerLink]="['/cursos-detalhe/', curso.id]">{{curso.cursoName}} - {{curso.useCase}}</a>
+  </li>
+</ul>
+
+<ng-template *ngIf="searchText !== undefined">
+  <!-- STACKED BAR CHART -->
+  <div class="card card-success">
+    <div class="card-header">
+      <h3 class="card-title">Stacked Bar Chart</h3>
+
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" aria-label="collapse" data-card-widget="collapse">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-tool" aria-label="remove" data-card-widget="remove">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="chart">
+        <canvas id="stackedBarChart" class="stackedBarChart"></canvas>
+      </div>
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</ng-template>
