@@ -12,7 +12,7 @@ import { Alcada } from '../../models/alcada.model';
 //import { MENSAGEM_ERRO } from 'src/app/shared/utils/mensagens-padrao';
 
 import { ActivatedRoute, Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
+import { Config } from 'datatables.net';
 //import { DATATABLES_EXPORT_BUTTONS } from 'src/app/shared/utils/datatables.config';
 
 @Component({
@@ -23,6 +23,8 @@ import { environment } from 'src/environments/environment';
 export class ListaAlcadaComponent implements OnInit, OnDestroy {
   // Informa o limite de dados trazidos pela API
   protected LIMITE_MAXIMO_DADOS = 1000;
+
+  dtOptions: Config = {};
 
   // @ViewChild(DataTableDirective, { static: false })
   // dtElement: DataTableDirective;
@@ -87,6 +89,9 @@ export class ListaAlcadaComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.limpar();
+    this.dtOptions = {
+      pagingType: 'full_numbers'
+    };
   }
 
   ngOnDestroy(): void {

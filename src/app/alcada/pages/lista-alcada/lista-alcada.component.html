@@ -33,7 +33,170 @@
             <div class="form-group row">
               <tabset class="w-100" #abas>
                 <tab heading="Gerais" id="gerais">
-                  <div class="col-sm-12 column"></div>
+                  <div class="col-sm-12 column p-2">
+                    <div class="row" [hidden]="!registros">
+                      <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                          <div class="ibox-title">
+                            <h5>Lista Tabela Alçada</h5>
+                            <div ibox-tools></div>
+                          </div>
+                          <div
+                            class="d-flex justify-content-center"
+                            *ngIf="registros && isLoadingTable"
+                          >
+                            <div class="sk-spinner sk-spinner-pulse m-5"></div>
+                          </div>
+                          <div
+                            class="ibox-content"
+                            [hidden]="registros && isLoadingTable"
+                          >
+                            <div class="col-sm-12 text-right pb-5">
+                              <button
+                                type="button"
+                                class="btn btn-w-m btn-success btn-sm mr-1"
+                                title="Incluir Novo"
+                              >
+                                <i class="fa fa-star"></i>&nbsp;Novo
+                              </button>
+                              <button
+                                (click)="excluir()"
+                                type="button"
+                                class="btn btn-w-m btn-danger btn-sm mr-1"
+                                title="Excluir"
+                              >
+                                <i class="fa fa-times"></i>&nbsp;Excluir
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-w-m btn-primary btn-sm"
+                                title="Editar Itens Selecionados"
+                              >
+                                <i class="fa fa-pencil"></i>&nbsp;Editar
+                              </button>
+                            </div>
+                            <table
+                              datatable
+                              class="table table-striped table-bordered table-pesquisa"
+                            >
+                              <thead>
+                                <tr>
+                                  <th
+                                    class="coluna-checkbox coluna-btn-checkbox"
+                                  ></th>
+                                  <th>Tipo</th>
+                                  <th>Nome</th>
+                                  <th>Percentual (%)</th>
+                                  <th>Período Validade</th>
+                                  <th style="width: 75px; text-align: right">
+                                    Auditoria
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <ng-container *ngFor="let alcada of registros">
+                                  <tr>
+                                    <td class="coluna-btn-checkbox"></td>
+                                    <td class="alinhamento-direita">
+                                      <a>
+                                        {{ alcada.codTipoAlcadaResgate }}
+                                      </a>
+                                    </td>
+                                    <td>{{ alcada.nome }}</td>
+                                    <td>{{ alcada.percAlcada }}</td>
+                                    <ng-container
+                                      *ngIf="
+                                        alcada.dtFim !== null;
+                                        else nullFim
+                                      "
+                                    >
+                                      <td>
+                                        {{
+                                          alcada.dtIni | date : "dd/MM/YYYY"
+                                        }}
+                                        a
+                                        {{ alcada.dtFim | date : "dd/MM/YYYY" }}
+                                      </td>
+                                    </ng-container>
+                                    <ng-template #nullFim>
+                                      <td>
+                                        {{ alcada.dtIni | date : "dd/MM/YYYY" }}
+                                      </td>
+                                    </ng-template>
+                                    <td style="text-align: center">
+                                      <a href="javascript:;">*</a>
+                                    </td>
+                                  </tr>
+                                </ng-container>
+                              </tbody>
+                              <tfoot #rodape>
+                                <tr>
+                                  <td
+                                    colspan="6"
+                                    class="text-center bg-light"
+                                  ></td>
+                                </tr>
+                                <tr>
+                                  <td colspan="6" class="text-center bg-light">
+                                    Linhas de 1 a 1000
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td
+                                    colspan="6"
+                                    class="text-center bg-light"
+                                  ></td>
+                                </tr>
+                              </tfoot>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </tab>
+                <tab heading="Avançado" id="avancadas">
+                  <div class="col-sm-12 column p-2">
+                    <p class="shadow-lg p-3 mb-5 bg-white rounded">
+                      Ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                      vitae leo malesuada purus eleifend imperdiet. Nullam
+                      blandit vestibulum convallis. Integer ac varius quam. Cras
+                      consequat, nisi eu euismod sollicitudin, justo nulla
+                      tincidunt eros, non suscipit est urna sed eros. Morbi
+                      consequat sem at tellus sollicitudin, non fermentum augue
+                      dapibus. Nullam lacinia nisi leo, nec consectetur mi
+                      faucibus placerat. Praesent mattis nibh augue, ac
+                      imperdiet tortor pharetra vitae. Nunc congue velit elit,
+                      eget consectetur augue consectetur ac. Fusce sit amet
+                      ullamcorper odio.
+                    </p>
+                    <p class="shadow-lg p-3 mb-5 bg-white rounded">
+                      Ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                      vitae leo malesuada purus eleifend imperdiet. Nullam
+                      blandit vestibulum convallis. Integer ac varius quam. Cras
+                      consequat, nisi eu euismod sollicitudin, justo nulla
+                      tincidunt eros, non suscipit est urna sed eros. Morbi
+                      consequat sem at tellus sollicitudin, non fermentum augue
+                      dapibus. Nullam lacinia nisi leo, nec consectetur mi
+                      faucibus placerat. Praesent mattis nibh augue, ac
+                      imperdiet tortor pharetra vitae. Nunc congue velit elit,
+                      eget consectetur augue consectetur ac. Fusce sit amet
+                      ullamcorper odio.
+                    </p>
+                    <p class="shadow-lg p-3 mb-5 bg-white rounded">
+                      Ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                      vitae leo malesuada purus eleifend imperdiet. Nullam
+                      blandit vestibulum convallis. Integer ac varius quam. Cras
+                      consequat, nisi eu euismod sollicitudin, justo nulla
+                      tincidunt eros, non suscipit est urna sed eros. Morbi
+                      consequat sem at tellus sollicitudin, non fermentum augue
+                      dapibus. Nullam lacinia nisi leo, nec consectetur mi
+                      faucibus placerat. Praesent mattis nibh augue, ac
+                      imperdiet tortor pharetra vitae. Nunc congue velit elit,
+                      eget consectetur augue consectetur ac. Fusce sit amet
+                      ullamcorper odio.
+                    </p>
+                  </div>
                 </tab>
               </tabset>
             </div>
@@ -42,106 +205,6 @@
             <div class=""></div>
           </div>
         </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="row" [hidden]="!registros">
-    <div class="col-lg-12">
-      <div class="ibox float-e-margins">
-        <div class="ibox-title">
-          <h5>Lista Tabela Alçada</h5>
-          <div ibox-tools></div>
-        </div>
-        <div
-          class="d-flex justify-content-center"
-          *ngIf="registros && isLoadingTable"
-        >
-          <div class="sk-spinner sk-spinner-pulse m-5"></div>
-        </div>
-        <div class="ibox-content" [hidden]="registros && isLoadingTable">
-          <div class="col-sm-12 text-right">
-            <button
-              type="button"
-              class="btn btn-w-m btn-success btn-sm mr-1"
-              title="Incluir Novo"
-            >
-              <i class="fa fa-star"></i>&nbsp;Novo
-            </button>
-            <button
-              (click)="excluir()"
-              type="button"
-              class="btn btn-w-m btn-danger btn-sm mr-1"
-              title="Excluir"
-            >
-              <i class="fa fa-times"></i>&nbsp;Excluir
-            </button>
-            <button
-              type="button"
-              class="btn btn-w-m btn-primary btn-sm"
-              title="Editar Itens Selecionados"
-            >
-              <i class="fa fa-pencil"></i>&nbsp;Editar
-            </button>
-          </div>
-          <table
-            datatable
-            class="table table-striped table-bordered table-pesquisa"
-          >
-            <thead>
-              <tr>
-                <th colspan="6"></th>
-              </tr>
-              <tr>
-                <th class="coluna-checkbox coluna-btn-checkbox"></th>
-                <th>Tipo</th>
-                <th>Nome</th>
-                <th>Percentual (%)</th>
-                <th>Período Validade</th>
-                <th style="width: 75px; text-align: right">Auditoria</th>
-              </tr>
-            </thead>
-            <tbody>
-              <ng-container *ngFor="let alcada of registros">
-                <tr>
-                  <td class="coluna-btn-checkbox"></td>
-                  <td class="alinhamento-direita">
-                    <a>
-                      {{ alcada.codTipoAlcadaResgate }}
-                    </a>
-                  </td>
-                  <td>{{ alcada.nome }}</td>
-                  <td>{{ alcada.percAlcada }}</td>
-                  <ng-container *ngIf="alcada.dtFim !== null; else nullFim">
-                    <td>
-                      {{ alcada.dtIni | date : "dd/MM/YYYY" }} a
-                      {{ alcada.dtFim | date : "dd/MM/YYYY" }}
-                    </td>
-                  </ng-container>
-                  <ng-template #nullFim>
-                    <td>{{ alcada.dtIni | date : "dd/MM/YYYY" }}</td>
-                  </ng-template>
-                  <td style="text-align: center">
-                    <a href="javascript:;">*</a>
-                  </td>
-                </tr>
-              </ng-container>
-            </tbody>
-            <tfoot #rodape>
-              <tr>
-                <td colspan="6" class="text-center bg-light"></td>
-              </tr>
-              <tr>
-                <td colspan="6" class="text-center bg-light">
-                  Linhas de 1 a 1000
-                </td>
-              </tr>
-              <tr>
-                <td colspan="6" class="text-center bg-light"></td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
       </div>
     </div>
   </div>
