@@ -6,9 +6,11 @@ import { FormulariosRoutingModule } from './formularios/formularios.routing.modu
 import { Erro404Component } from './pages/erro404/erro404.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PostsRoutingModule } from './posts/posts.routing.module';
+import { ListaAlcadaComponent } from './alcada/pages/lista-alcada/lista-alcada.component';
 
 
 const appRoutes: Routes = [
+  { path: 'alcada', component: ListaAlcadaComponent },
   { path: 'filtros', component: FiltroComPipeComponent },
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },

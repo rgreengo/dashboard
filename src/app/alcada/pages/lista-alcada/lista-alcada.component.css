@@ -1,0 +1,10 @@
+.linha-destaque {
+  color: #006D81;
+  margin: 0;
+  background-color: #e7eaec;
+  padding: 8px;
+}
+
+.alinhamento-direita {
+  text-align: right;
+}

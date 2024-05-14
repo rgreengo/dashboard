@@ -18,6 +18,7 @@ import { PostsService } from './posts/posts.service';
 import { FormulariosModule } from './formularios/formularios.module';
 import { ObservablesModule } from './observables/observables.module';
 import { ConversorModule } from './conversor-moeda/conversor.module';
+import { AlcadaModule } from './alcada/alcada.module';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ConversorModule } from './conversor-moeda/conversor.module';
     PostModule,
     ObservablesModule,
     AppRoutingModule,
+    AlcadaModule,
   ],
   providers: [
     CursosService,
