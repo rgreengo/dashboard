@@ -6,7 +6,6 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Location } from '@angular/common';
-//import { DataTableDirective } from 'angular-datatables';
 import { AlcadaService } from '../../services/alcada.service';
 import { Alcada } from '../../models/alcada.model';
 //import { Panels } from 'src/app/shared/components/panels/models/panels.model';

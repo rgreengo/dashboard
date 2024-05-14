@@ -5,6 +5,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { HttpClientModule } from '@angular/common/http';
 
+
+
 import { HomeComponent } from './pages/home/home.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
