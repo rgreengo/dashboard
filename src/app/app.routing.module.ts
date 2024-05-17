@@ -7,7 +7,7 @@ import { Erro404Component } from './pages/erro404/erro404.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PostsRoutingModule } from './posts/posts.routing.module';
 import { ListaAlcadaComponent } from './alcada/pages/lista-alcada/lista-alcada.component';
-
+import { TodoListRoutingModule } from './to-do-list/todo-list.routing.module';
 
 const appRoutes: Routes = [
   { path: 'alcada', component: ListaAlcadaComponent },
@@ -20,6 +20,7 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
     PostsRoutingModule,
+    TodoListRoutingModule,
     FormulariosRoutingModule,
     RouterModule.forRoot(appRoutes),
   ],
